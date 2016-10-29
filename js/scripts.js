@@ -33,35 +33,47 @@ Pizza.prototype.cheeseUp = function () {
   this.pie.push(cheeseFee);
 };
 
-// Pizza.prototype.sauceUp = function () {
-//   if (this.sauce ==="pesto") {
-//     this.pie.push(2.00)
-//   } else if (this.sauce === "white sauce" || this.sauce === "red sauce" || this.sauce === "barbeque") {
-//     this.pie.push(.75)
-//   } else {
-//     this.pie.push(0)
-//   }
-// }
+Pizza.prototype.sauceUp = function () {
+  if (this.sauce ==="pesto") {
+    this.pie.push(2.00)
+  } else if (this.sauce === "white sauce" || this.sauce === "red sauce" || this.sauce === "barbeque") {
+    this.pie.push(.75)
+  } else {
+    this.pie.push(0)
+  }
+}
 
-// Pizza.prototype.topitUp = function() {
-//   this.toppings.forEach(function(meat) {
-//     if (meat === "pepperoni" ){
-//       return  topFee =.25
-//     } else if (meat === "sausage") {
-//       return topFee = .25
-//   } else if (meat === "spicy sausage" || meat === "chicken") {
-//     return topFee = .75
-//   } else if (meat === "chicken") {
-//     return topFee = 1.00
-//   }  else if (meat === "bacon" ) {
-//     return topFee = 1.25
-//   }
-//     else {
-//       return topFee = 0
-//     }
-//   })
-//   this.pie.push(topFee);
-// }
+Pizza.prototype.topitUp = function() {
+  var topFee = 0
+  this.toppings.forEach(function(topping) {
+    if (topping === "pepperoni" ){
+      return  topFee +=.25
+    } else if (topping === "sausage") {
+      return topFee += .25
+  } else if (topping === "spicy sausage") {
+    return topFee += .75
+  } else if (topping === "chicken") {
+    return topFee += 1.00
+  }  else if (topping === "bacon" ) {
+    return topFee += 1.25
+  } else if (topping === "mushrooms" ) {
+    return topFee += .25
+  } else if (topping === "black olives" ) {
+    return topFee += .25
+  } else if (topping === "diced tomatoes" ) {
+    return topFee += .25
+  } else if (topping === "roasted brussel sprouts" ) {
+    return topFee += .50
+  }  else if (topping === "anchovies" ) {
+    return topFee += 1.00
+  } else if (topping === "sardines" ) {
+    return topFee += 1.00
+  } else {
+      return topFee += 0
+    }
+  })
+  this.pie.push(topFee);
+}
 
 
 
@@ -84,12 +96,12 @@ $(document).ready(function() {
 
     var zaOrder = new Pizza($("input:checkbox[ name=p-Size]:checked").val(), $("input:checkbox[ name=p-Sauce]:checked").val(),orderCheeses ,orderToppings, 0,[])
 
-    alert(zaOrder.size+","+ zaOrder.sauce+","+zaOrder.cheese+","+ zaOrder.toppings );
+    // alert(zaOrder.size+","+ zaOrder.sauce+","+zaOrder.cheese+","+ zaOrder.toppings );
 
   zaOrder.sizeUp();
   zaOrder.cheeseUp();
-  // zaOrder.sauceUp();
-  // zaOrder.topitUp();
+  zaOrder.sauceUp();
+  zaOrder.topitUp();
   alert(zaOrder.pie);
 
   });
