@@ -53,7 +53,7 @@ Using the pizza object, the price of the pizza is calculated with several protot
 * host it!  
     Or
 * Click the link for the live page on github pages!
-https://tyedye105.github.io/pingpong
+https://tyedye105.github.io/pizza
 
 
 ## Known Bugs
