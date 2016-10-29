@@ -16,6 +16,7 @@ function Pizza(size, sauce, cheese , toppings, price, pie) {
 } else {
   this.pie.push(0);
 }
+
 };
 Pizza.prototype.cheeseUp = function () {
   var cheeseFee = 0;
@@ -36,8 +37,10 @@ Pizza.prototype.cheeseUp = function () {
 Pizza.prototype.sauceUp = function () {
   if (this.sauce ==="pesto") {
     this.pie.push(2.00)
-  } else if (this.sauce === "white sauce" || this.sauce === "red sauce" || this.sauce === "barbeque") {
+  } else if ( this.sauce === "red sauce" || this.sauce === "barbeque") {
     this.pie.push(.75)
+  } else if (this.sauce ==="white sauce") {
+    this.pie.push(1.00)
   } else {
     this.pie.push(0)
   }
@@ -75,6 +78,14 @@ Pizza.prototype.topitUp = function() {
   this.pie.push(topFee);
 }
 
+Pizza.prototype.pizzaPrice = function() {
+  var zaCost = 0
+  this.pie.forEach(function(pie){
+return    zaCost += pie
+  })
+this.price = zaCost.toFixed(2);
+}
+
 
 
 
@@ -103,6 +114,7 @@ $(document).ready(function() {
   zaOrder.sauceUp();
   zaOrder.topitUp();
   alert(zaOrder.pie);
-
+  zaOrder.pizzaPrice();
+  alert(zaOrder.price);
   });
 });
