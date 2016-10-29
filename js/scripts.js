@@ -1,12 +1,12 @@
- var pizza = {
-   size:"",
-   cheese:"",
-   sauce:"",
-   toppings:"",
-   price:0,
-   pie:[]
+function Pizza(size, cheese, sauce, toppings, price, pie) {
+   this.size = size;
+   this.cheese = cheese;
+   this.sauce = sauce;
+   this.toppings = toppings;
+   this.price = 0;
+   this.pie = [];
  }
-
+// Determines base price by size
  var pizzaPrice = function() {
   if (pizza.size === "small") {
     pizza.price =+ 4.99;
@@ -37,10 +37,19 @@
 $(document).ready(function() {
   $("form#pizza-choice").submit(function(event){
     event.preventDefault();
-    pizza.size = $("input:checkbox[ name=p-Size]:checked").val();
-    alert(pizza.size);
-    pizzaPrice(pizza.size);
-    alert(pizza.price);
+    var orderToppings = [];
+    $("input:checkbox[ name=p-Topping]:checked").each(function(){
+      var topping = $(this).val();
+      orderToppings.push(topping)
+    })
+    var orderCheeses = [];
+    $("input:checkbox[ name=p-Cheese]:checked").each(function(){
+      var cheese = $(this).val();
+      orderCheeses.push(cheese);
+    })
+
+    var zaOrder = new Pizza($("input:checkbox[ name=p-Size]:checked").val(), $("input:checkbox[ name=p-Sauce]:checked").val(),orderCheeses ,orderToppings, 0,[])
+    alert(zaOrder.size +" " +zaOrder.cheese+ " "+zaOrder.sauce+" "+zaOrder.toppings+ " "+ zaOrder.price);
 
   });
 });
