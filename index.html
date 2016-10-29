@@ -5,7 +5,6 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css">
     <script src="js/jquery-3.1.1.js"></script>
     <script src="js/scripts.js"></script>
-
     <title> Plentiful Pizza</title>
   </head>
   <body>
@@ -18,30 +17,30 @@
         There are plenty of pizza places out there in the world, but some of them lack imagination.Don't get us wrong, there is nothing like a tried and true tradition pepperoni pizza, but sometimes you want to kick it up a notch and and some sasuage atop. Or maybe you want to outside of the box and throw on some roasted brussel sprouts.  You pick the size, you pick the sauce, the cheese, and whatever toppings you want, and we will take care of the rest!  Order down below!
       </p>
       <br>
-      <h2>Plentiful Pizza Checkbox O' Matic</h3>
-        <form id="pizza-choice">
-          <h4>Choose the size, sauces, cheeses, and toppings below.  Click the PIZZA! button down below and our crack-team of pizza monkeys will figure out the cost!</h4>
-          <div class="form-group">
-       <p>Choose your size!</p>
-       <input type="checkbox" name="p-Size" value="small">Small.<br>
-       <input type="checkbox" name="p-Size" value="medium">Medium<br>
-       <input type="checkbox" name="p-Size" value="large">Large<br>
-          </div>
-          <div class="form-group">
-       <p>Choose your sauce!</p>
-       <input type="checkbox" name="p-Sauce" value="red sauce"> Red sauce<br>
-       <input type="checkbox" name="p-Sauce" value="white sauce">White Sauce<br>
-       <input type="checkbox" name="p-Sauce" value="pesto">Pesto<br>
-       <input type="checkbox" name="p-Sauce" value="barbeque">Barbeque<br>
-          </div>
-          <div class="form-group">
-       <p>Choose your cheeses!</p>
-       <input type="checkbox" name="p-Cheese" value="mozzerella">Mozzerella<br>
-       <input type="checkbox" name="p-Cheese" value="pepper jack">Pepper Jack<br>
-       <input type="checkbox" name="p-Cheese" value="cheddar">Cheddar<br>
-       <input type="checkbox" name="p-Cheese" value="smoked cheddar">Smoked Cheddar<br>
-          </div>
-            <div class="form-group">
+      <form id="pizza-choice">
+        <h2>Plentiful Pizza Checkbox O' Matic</h3>
+        <h4>Choose the size, sauces, cheeses, and toppings below.  Click the PIZZA! button down below and our crack-team of pizza monkeys will figure out the cost!</h4>
+        <div class="form-group">
+          <p>Choose your size!</p>
+          <input type="checkbox" name="p-Size" value="small">Small.<br>
+          <input type="checkbox" name="p-Size" value="medium">Medium<br>
+          <input type="checkbox" name="p-Size" value="large">Large<br>
+        </div>
+        <div class="form-group">
+          <p>Choose your sauce!</p>
+          <input type="checkbox" name="p-Sauce" value="red sauce"> Red sauce<br>
+          <input type="checkbox" name="p-Sauce" value="white sauce">White Sauce<br>
+          <input type="checkbox" name="p-Sauce" value="pesto">Pesto<br>
+          <input type="checkbox" name="p-Sauce" value="barbeque">Barbeque<br>
+        </div>
+        <div class="form-group">
+          <p>Choose your cheeses!</p>
+          <input type="checkbox" name="p-Cheese" value="mozzerella">Mozzerella<br>
+          <input type="checkbox" name="p-Cheese" value="pepper jack">Pepper Jack<br>
+          <input type="checkbox" name="p-Cheese" value="cheddar">Cheddar<br>
+          <input type="checkbox" name="p-Cheese" value="smoked cheddar">Smoked Cheddar<br>
+        </div>
+        <div class="form-group">
           <p>Choose your Toppings!</p>
           <input type="checkbox" name="p-Topping" value="pepperoni">Pepperoni<br>
           <input type="checkbox" name="p-Topping" value="sausage">Sauasge<br>
@@ -54,11 +53,20 @@
           <input type="checkbox" name="p-Topping" value="roasted brussel sprouts">Roasted Brussel Sprouts<br>
           <input type="checkbox" name="p-Topping" value="anchovies">Anchovies<br>
           <input type="checkbox" name="p-Topping" value="sardines">Sardines<br>
-             </div>
-
-             <button type="submit">PIZZA!</button>
-        </form>
+        </div>
+        <button class="btn" type="submit">PIZZA!</button>
+      </form>
+      <div id" id="pizza-cost"">
+        <div class="jumbotron">
+          <p>
+            Your pizza will cost: $<span id="price-tag"></span>!
+            <br>
+            Thanks for your order!
+          </p>
+          <h6>click the button below to create another pizza!</h6>
+        </div>
+        <button class="btn" id="moar-pizza"> MOAR PIZZA!</button>
+      </div>
     </div>
-
   </body>
 </html>
