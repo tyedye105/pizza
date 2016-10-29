@@ -17,11 +17,11 @@ function Pizza(size, sauce, cheese , toppings, price, pie) {
 };
 Pizza.prototype.cheeseUp = function () {
   this.cheese.forEach(function(cheese) {
-
     if (cheese === "smoked cheddar") {
-      return  cheeseFee =1.50
-
-    } else {
+      return cheeseFee = 2.50
+    } else if (cheese === "pepper jack" || "cheddar") {
+      return cheeseFee =1.00
+  } else if (cheese === "mozzerella"){
       return  cheeseFee =.50
     }
   })
@@ -47,20 +47,6 @@ Pizza.prototype.cheeseUp = function () {
 // }
 
 
-
-// pizza.size = prompt("Please select a size");
-//
-// pizza.cheese = prompt("please select your cheeses")
-//
-// pizza.sauce = prompt("Please select a sauce")
-//
-// pizza.toppings = prompt("pease select your toppings")
-//
-// pizza.pie.push(pizza.size, pizza.cheese);
-//
-// pizzaPrice(pizza.pie);
-//
-// alert(pizza.price);
 $(document).ready(function() {
   $("form#pizza-choice").submit(function(event){
     event.preventDefault();
